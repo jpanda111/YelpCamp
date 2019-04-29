@@ -13,7 +13,7 @@ var express         = require("express"),
 // set up env variable
 require('dotenv').config();
 //mongoose.connect("mongodb://localhost/yelp_camp");
-const databaseUri = "mongodb+srv://yelpcamp:<yelpcamp123>@yelpcamp-ths21.mongodb.net/test?retryWrites=true";
+const databaseUri = "mongodb+srv://yelpcamp:yelpcamp123@yelpcamp-ths21.mongodb.net/test?retryWrites=true";
 // const databaseUri = process.env.MONGODB_URI || "mongodb://localhost:27017/yelp_camp_final";
 mongoose.connect(databaseUri, {useNewUrlParser: true})
     .then(() => console.log(`Database connected`))
