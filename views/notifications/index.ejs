@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%= user.firstName + " "+user.lastName %></h1>
+        <div class="thumbnail">
+            <img src="<%= user.avatar %>" alt="user profile image">
+            <div class="caption">
+                <a href="mailto:<%= user.email%>"><%= user.email%></a>
+            </div>
+        </div>
+        <div>
+            Add some description about yourself!
+        </div>
+    </div>
+    <div class="col-md-8">
+         <% if (allNotifications.length < 1) {%>
+        <h3>You don't have any notifications.</h3>
+        <% } else { %>
+        <h3>You have total <%=allNotifications.length%> notifictions.</h3>
+            <div class='thumbnail'>
+                <div class='caption-full'>
+                <% allNotifications.forEach(function(notification) { %>
+                <div class="row">
+                    <div class="col-md-9">
+                        <ul>
+                            <li>
+                                <%= notification.username %> just added a new campground
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="/campgrounds/<%= notification.campgroundId %>">go check it out!</a>
+                    </div>
+                </div>
+                <% }); %>
+            <% } %>
+            </div>
+        </div>
+        
+        <h3>You have total <%= user.followings.length %> following users</h3>
+        <div class="thumbnail">
+            <div class="caption-full">
+                <% user.followings.forEach(function(following){ %>
+                <div class="row">
+                    <div class="col-md-9">
+                        <ul>
+                            <li>
+                               <%=following.username%> 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <p><a href="/users/<%=following._id%>">Go check it out!</a></p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
