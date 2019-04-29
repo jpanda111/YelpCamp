@@ -1,6 +1,12 @@
 var mongoose    = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/yelp_camp_final", {useNewUrlParser: true});
-mongoose.set("useFindAndModify", false);
+//mongoose.connect("mongodb://localhost/yelp_camp");
+const databaseUri = "mongodb+srv://yelpcamp:<yelpcamp123>@yelpcamp-ths21.mongodb.net/test?retryWrites=true";
+// const databaseUri = process.env.MONGODB_URI || "mongodb://localhost:27017/yelp_camp_final";
+mongoose.connect(databaseUri, {useNewUrlParser: true, "useFindAndModify": false})
+    .then(() => console.log(`Database connected`))
+    .catch(err => console.log(`Database connection error: ${err.message}`));
+// mongoose.connect("mongodb://localhost:27017/yelp_camp_final", {useNewUrlParser: true});
+// mongoose.set("useFindAndModify", false);
 // var Comment = require("./comment");
 // var Review = require("./review");
 
