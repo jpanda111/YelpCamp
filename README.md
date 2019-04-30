@@ -1,6 +1,5 @@
 # YelpCamp
-MEN STACK WEB DEVELOPMENT
-A website allows registered users to post/comment/review their favorite campgrounds and meet new friends!
+A MEN-stack based website allows registered users to post/comment/review their favorite campgrounds and meet new friends!
 
 ## DEMO:
 https://enigmatic-coast-28741.herokuapp.com/
