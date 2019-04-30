@@ -33,3 +33,8 @@ https://enigmatic-coast-28741.herokuapp.com/
 - Improve image load time on the landing page using Cloudinary
 - Display time since post/comments/reviews was created
 - Pagination on campgrounds index
+
+### Code develop environment
+- Front-end: ejs, bootstrap, css, html, dom, jquery
+- back-end: express, mongodb, mongoose, passport, moment, nodemailer, cloudinary, crypto, async, connect-flash, passport-local
+- Platform: Cloudinary, Heroku, Cloud9(migrate to AWS)
